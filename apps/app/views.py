@@ -77,14 +77,14 @@ class ClubChartView(LoginRequiredMixin, TemplateView):
         
         # print(context['document'])
         return context
-
+#login url route
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
-
+        #load and split template
         load_template = request.path.split('/')[-1]
 
         if load_template == 'admin':
