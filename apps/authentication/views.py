@@ -38,6 +38,7 @@ def login_view(request):
                         if user is not None:
                             # if user is authenticated then and then it will enter inside IF block and then LOGIN allowed
                             if(obj2.admin_approval_status):
+                                # only admin approved users are allowed to be logged in
                                 login(request, user)
                                 request.session['name'] = obj1.first_name
                                 request.session['username'] = obj1.username
