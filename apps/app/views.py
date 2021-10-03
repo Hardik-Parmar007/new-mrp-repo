@@ -86,6 +86,7 @@ def pages(request):
     try:
         #load and split template
         load_template = request.path.split('/')[-1]
+        print("login bloc called")
 
         if load_template == 'admin':
             return HttpResponseRedirect(reverse('admin:index'))
@@ -101,4 +102,5 @@ def pages(request):
 
     except:
         html_template = loader.get_template('page-500.html')
+        print("login error")
         return HttpResponse(html_template.render(context, request))
